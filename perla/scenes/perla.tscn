@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxbwh5drie5xf"]
+
+[ext_resource type="Script" path="res://scripts/perla.gd" id="1_bll47"]
+[ext_resource type="Texture2D" uid="uid://bejp5djg8t81s" path="res://assets/icon.svg" id="2_qofeo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pin42"]
+
+[node name="Perla" type="CharacterBody2D"]
+script = ExtResource("1_bll47")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6.4, 6.4)
+shape = SubResource("RectangleShape2D_pin42")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qofeo")
+
+[node name="slow_fall_Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="slow_fall_Timer" to="." method="_on_slow_fall_timer_timeout"]
