@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4lnk74dekxq2"
-path="res://.godot/imported/underwater_background.jpg-be60069d9f3fd16527b3d75b17db3c39.ctex"
+uid="uid://d5osdg1uq87w"
+path="res://.godot/imported/Perla_game_background.aseprite-91627af66cdd4677d900861447e7c217.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/underwater_background.jpg"
-dest_files=["res://.godot/imported/underwater_background.jpg-be60069d9f3fd16527b3d75b17db3c39.ctex"]
+source_file="res://assets/Perla_game_background.aseprite"
+dest_files=["res://.godot/imported/Perla_game_background.aseprite-91627af66cdd4677d900861447e7c217.ctex"]
 
 [params]
 

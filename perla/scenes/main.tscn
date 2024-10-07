@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://qjrxai0o3b5b"]
+[gd_scene load_steps=4 format=3 uid="uid://qjrxai0o3b5b"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6jhmg"]
 [ext_resource type="PackedScene" uid="uid://dxbwh5drie5xf" path="res://scenes/perla.tscn" id="1_ngxkr"]
+[ext_resource type="Texture2D" uid="uid://d5osdg1uq87w" path="res://assets/Perla_game_background.aseprite" id="2_c5gjd"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_6jhmg")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(432, 468)
+texture = ExtResource("2_c5gjd")
+
 [node name="Perla" parent="." instance=ExtResource("1_ngxkr")]
+z_index = 1
