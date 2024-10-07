@@ -1,17 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://qjrxai0o3b5b"]
 
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_6jhmg"]
 [ext_resource type="PackedScene" uid="uid://dxbwh5drie5xf" path="res://scenes/perla.tscn" id="1_ngxkr"]
-[ext_resource type="Texture2D" uid="uid://b4lnk74dekxq2" path="res://assets/underwater_background.jpg" id="1_tc6kj"]
 
-[node name="main" type="Node2D"]
+[node name="Main" type="Node"]
+script = ExtResource("1_6jhmg")
 
 [node name="Perla" parent="." instance=ExtResource("1_ngxkr")]
-position = Vector2(79, 68)
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(877, 328)
-texture = ExtResource("1_tc6kj")

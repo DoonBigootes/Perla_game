@@ -1,21 +1,77 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxbwh5drie5xf"]
+[gd_scene load_steps=10 format=3 uid="uid://dxbwh5drie5xf"]
 
 [ext_resource type="Script" path="res://scripts/perla.gd" id="1_bll47"]
-[ext_resource type="Texture2D" uid="uid://bejp5djg8t81s" path="res://assets/icon.svg" id="2_qofeo"]
+[ext_resource type="Texture2D" uid="uid://b1mrkt4sffc7k" path="res://assets/Perla_game_perla-Sheet.aseprite" id="2_6u4nm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pin42"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6tpl"]
+radius = 4.35823
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5omp"]
+atlas = ExtResource("2_6u4nm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f38yy"]
+atlas = ExtResource("2_6u4nm")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opdho"]
+atlas = ExtResource("2_6u4nm")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1q7ic"]
+load_path = "res://.godot/imported/Perla_game_perla-Sheet.aseprite-de0f97d2af57171ba86a04ff26eedb02.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed7uv"]
+atlas = SubResource("CompressedTexture2D_1q7ic")
+region = Rect2(0, 0, 62, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_irb2l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5omp")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_f38yy")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_opdho")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_f38yy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5omp")
+}],
+"loop": false,
+"name": &"blink",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed7uv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="Perla" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_bll47")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(6.4, 6.4)
-shape = SubResource("RectangleShape2D_pin42")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_qofeo")
+shape = SubResource("CircleShape2D_j6tpl")
 
 [node name="slow_fall_Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -4)
+sprite_frames = SubResource("SpriteFrames_irb2l")
+animation = &"blink"
+frame = 4
+frame_progress = 1.0
 
 [connection signal="timeout" from="slow_fall_Timer" to="." method="_on_slow_fall_timer_timeout"]

@@ -15,6 +15,14 @@ run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://assets/icon.svg"
 
+[aseprite_importers]
+
+aseprite_executable_path="C:/Users/PC/Documents/Coding/Godot/Aseprite/aseprite.exe"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/nklbdev.aseprite_importers/plugin.cfg")
+
 [input]
 
 jump={
